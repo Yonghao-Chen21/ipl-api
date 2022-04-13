@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/lwl
-    username: dbuser
+    url: jdbc:postgresql://localhost:5432/ipl-api
+    username: postgres
     password: user123
   jpa:
     hibernate:
@@ -9,7 +9,7 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
   servlet:
     context-path: /ipl

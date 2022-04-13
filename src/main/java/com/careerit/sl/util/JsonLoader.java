@@ -76,8 +76,9 @@ public class JsonLoader {
 			// save teams again then players will be saved into DB.
 			teamRepo.save(team);
 			
-			System.out.println("Loading data to DB successfully");
 		}
+		
+		System.out.println("Loading data to DB successfully");
 	}
 
 }
