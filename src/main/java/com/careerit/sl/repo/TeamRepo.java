@@ -32,11 +32,11 @@ public interface TeamRepo extends JpaRepository<Team,Long> {
 	public List<RoleAmountDto> getAmountSpentByRoles();
 	
 	//List<teamName role count amount>
-	@Query(value = "select new com.careerit.sl.dto.TeamRoleCountAmountDto(t.label,p.role,count(1),sum(p.price)) from Player p inner join Team t on p.team.id=t.id where t.label = :label group by p.role order by t.label,p.role")
+	@Query(value = "select new com.careerit.sl.dto.TeamRoleCountAmountDto(t.label,p.role,count(1),sum(p.price)) from Player p inner join Team t on p.team.id=t.id where t.label =:label group by p.role,t.label order by t.label,p.role")
 	public List<TeamRoleCountAmountDto> getTeamRoleCountAmountSpentByRoles(@Param("label") String label);
 
 	//max_amount avg_amount min_amount
-	@Query(value = "select new com.careerit.sl.dto.FeaturedAmountByLabelDto(t.label,min(p.price),avg(p.price),max(p.price)) from Player p inner join Team t on p.team.id=t.id where t.label = :label")
+	@Query(value = "select new com.careerit.sl.dto.FeaturedAmountByLabelDto(t.label,min(p.price),avg(p.price),max(p.price)) from Player p inner join Team t on p.team.id=t.id where t.label =:label group by t.label")
 	public List<FeaturedAmountByLabelDto> getFeaturedAmountByLabelDto(@Param("label") String label);
 	
 	
