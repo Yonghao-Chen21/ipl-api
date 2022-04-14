@@ -40,37 +40,37 @@ public class IplStatController {
 		return service.getPlayerByTeam(label);
 	}
 	
-	@GetMapping("/amountperlabel")
+	@GetMapping("/amountbyeachlabel")
 	public List<TeamAmountDto> getAmountPerLabel() {
 		return service.getAmountSpentPerTeams();
 	}
 	
-	@GetMapping("/amountperrole")
+	@GetMapping("/amountbyeachrole")
 	public List<RoleAmountDto> getAmountPerRole() {
 		return service.getAmountSpentByRoles();
 	}
 	
-	@GetMapping("/amountperteamrole")
+	@GetMapping("/amountbyeachteamrole")
 	public List<TeamAmountByRoleDto> getAmountSpentPerTeamRoles() {
 		return service.getAmountSpentPerTeamRoles();
 	}
 	
-	@GetMapping("/amountcountperteamrole")
+	@GetMapping("/amountcountbyeachteamrole")
 	public List<TeamRoleCountAmountDto> getTeamRoleCountAmountSpentByRoles(@RequestParam String label) {
 		return service.getTeamRoleCountAmountSpentByRoles(label);
 	}	
 	
-	@GetMapping("/feature")
+	@GetMapping("/featurebylabel")
 	public List<FeaturedAmountByLabelDto> getFeaturedAmountByLabelDto(@RequestParam String label) {
 		return service.getFeaturedAmountByLabelDto(label);
 	}
 	
-	@GetMapping("/maxamountplayerbyrole")
+	@GetMapping("/maxamountplayerbyeachrole")
 	public Map<String, List<PlayerReqDto>> getMaxPaidPlayersByRole() {
 		return service.getMaxPaidPlayersByRole();
 	}
 	
-	@GetMapping("/playerdetails")
+	@GetMapping("/allplayerdetails")
 	public List<PlayerWithTeamDetailsDto> getPlayerWtihTeamDetails() {
 		return service.getPlayerWtihTeamDetails();
 	}
