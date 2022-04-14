@@ -11,6 +11,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
+  port: ${PORT:8080}
   servlet:
     context-path: /ipl
     
