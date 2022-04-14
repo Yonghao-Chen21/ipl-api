@@ -1,6 +1,7 @@
 package com.careerit.sl.web.exception;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -15,7 +16,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
 
 		@ExceptionHandler({IllegalArgumentException.class})
 		public ResponseEntity<Object> handleArgumentNotValid(Exception ex, WebRequest request) {
-			List<String> list = List.of(ex.getMessage());
+			List<String> list = Arrays.asList(ex.getMessage());
 			ApiError apiError = new ApiError(LocalDateTime.now(), list,HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<>(apiError,HttpStatus.BAD_REQUEST);
 		}
